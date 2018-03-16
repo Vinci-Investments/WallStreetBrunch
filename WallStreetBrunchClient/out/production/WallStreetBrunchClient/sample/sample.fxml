@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TableView fx:id="TabView" layoutX="14.0" layoutY="167.0" prefHeight="657.0" prefWidth="1554.0" stylesheets="@./tableview.css">
+        <columns>
+          <TableColumn fx:id="prodCol" prefWidth="1081.0" text="Product" />
+            <TableColumn fx:id="priceCol" prefWidth="472.0" text="Price (€)" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="150.0" fitWidth="684.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@./logo%20-%20VINCI%20INVESTMENTS%20-%20général.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="1583.0" layoutY="185.0" prefHeight="37.0" prefWidth="293.0" text="Prices will update in :">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <Label fx:id="minuter" layoutX="1568.0" layoutY="347.0" prefHeight="206.0" prefWidth="329.0" text=" 0 : 00">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Label>
+      <Label fx:id="varsLabel" layoutX="14.0" layoutY="837.0" prefHeight="49.0" prefWidth="1876.0" text="VARIATIONS">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="134.0" fitWidth="360.0" layoutX="1529.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@./wsb.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

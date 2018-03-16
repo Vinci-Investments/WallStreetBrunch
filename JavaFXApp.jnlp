@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JavaFXApp.jnlp">
+  <information>
+    <title>JavaFXApp</title>
+    <vendor>Unknown</vendor>
+    <description>JavaFXApp</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JavaFXApp.jar" size="43652" download="eager" />
+    <jar href="bson-3.5.0.jar" size="371481" download="eager" />
+    <jar href="json-20160810.jar" size="54495" download="eager" />
+    <jar href="mongodb-driver-3.5.0.jar" size="364609" download="eager" />
+    <jar href="mongodb-driver-core-3.5.0.jar" size="1080017" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="sample.Main"  name="JavaFXApp" />
+  <update check="background"/>
+</jnlp>
