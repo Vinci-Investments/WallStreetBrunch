@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <TableView fx:id="TabView" layoutX="14.0" layoutY="167.0" prefHeight="657.0" prefWidth="1554.0" stylesheets="@./tableview.css">
+      <TableView fx:id="TabView" layoutX="1439.0" layoutY="189.0" prefHeight="627.0" prefWidth="447.0" stylesheets="@./tableview.css">
         <columns>
-          <TableColumn fx:id="prodCol" prefWidth="1081.0" text="Product" />
-            <TableColumn fx:id="priceCol" prefWidth="472.0" text="Price (€)" />
+          <TableColumn fx:id="prodCol" prefWidth="233.0" resizable="false" text="Product" />
+            <TableColumn fx:id="priceCol" prefWidth="213.0" text="Price (€)" />
         </columns>
       </TableView>
       <ImageView fitHeight="150.0" fitWidth="684.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
@@ -19,25 +27,130 @@
             <Image url="@./logo%20-%20VINCI%20INVESTMENTS%20-%20général.png" />
          </image>
       </ImageView>
-      <Label layoutX="1583.0" layoutY="185.0" prefHeight="37.0" prefWidth="293.0" text="Prices will update in :">
+      <Label layoutX="832.0" layoutY="14.0" prefHeight="37.0" prefWidth="293.0" text="Prices will update in :">
          <font>
             <Font size="31.0" />
          </font>
       </Label>
-      <Label fx:id="minuter" layoutX="1568.0" layoutY="347.0" prefHeight="206.0" prefWidth="329.0" text=" 0 : 00">
+      <Label fx:id="minuter" layoutX="870.0" prefHeight="206.0" prefWidth="329.0" text=" 0 : 00">
          <font>
             <Font size="96.0" />
          </font>
       </Label>
-      <Label fx:id="varsLabel" layoutX="14.0" layoutY="837.0" prefHeight="49.0" prefWidth="1876.0" text="VARIATIONS">
+      <Label fx:id="varsLabel" layoutX="12.0" layoutY="837.0" prefHeight="49.0" prefWidth="1876.0" text="VARIATIONS">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <ImageView fitHeight="134.0" fitWidth="360.0" layoutX="1529.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+      <TabPane layoutX="14.0" layoutY="150.0" prefHeight="691.0" prefWidth="1361.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Boisson">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="512.0" prefWidth="955.0">
+                     <children>
+                        <LineChart fx:id="LineChartJus" prefHeight="340.0" prefWidth="644.0" title="Jus de fruit">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" upperBound="5.0" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="LineChartCafe" layoutX="5.0" layoutY="316.0" prefHeight="340.0" prefWidth="644.0" title="Café">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="LineChartChoco" layoutX="644.0" layoutY="316.0" prefHeight="340.0" prefWidth="644.0" title="Chocolat chaud">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                        <Label layoutX="601.0" layoutY="23.0" text="Boisson" textFill="#a92424" underline="true">
+                           <font>
+                              <Font name="System Bold" size="44.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Sucré">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <LineChart fx:id="LineChartCookie" prefHeight="320.0" prefWidth="676.0" title="Cookie">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="LineChartCrepe" layoutY="320.0" prefHeight="320.0" prefWidth="676.0" title="Crèpe">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="LineChartGateau" layoutX="681.0" layoutY="11.0" prefHeight="320.0" prefWidth="676.0" title="Gateau">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="LineChartDonut" layoutX="681.0" layoutY="320.0" prefHeight="320.0" prefWidth="676.0" title="Viennoiserie">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                        <Label layoutX="624.0" layoutY="11.0" text="Sucré" textFill="#c62626" underline="true">
+                           <font>
+                              <Font name="System Bold" size="44.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Salé">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="458.0" prefWidth="532.0">
+                     <children>
+                        <LineChart fx:id="LineChartSale" layoutX="14.0" layoutY="14.0" prefHeight="639.0" prefWidth="1335.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Label layoutX="650.0" prefHeight="138.0" prefWidth="362.0" text="Salé" textFill="#b71f1f" underline="true">
+                           <font>
+                              <Font name="System Bold" size="54.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <ImageView fitHeight="189.0" fitWidth="344.0" layoutX="1495.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@./wsb.jpg" />
+            <Image url="@46439259_2133738090275745_1352741774266728448_o.png" />
          </image>
       </ImageView>
+      <ProgressIndicator fx:id="progressIndi" layoutX="817.0" layoutY="70.0" prefHeight="66.0" prefWidth="71.0" progress="0.0" />
    </children>
 </AnchorPane>

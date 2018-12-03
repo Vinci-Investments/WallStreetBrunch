@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <TableView fx:id="TabView" layoutY="104.0" prefHeight="522.0" prefWidth="287.0">
+      <TableView fx:id="TabView" layoutY="104.0" prefHeight="522.0" prefWidth="288.0">
         <columns>
           <TableColumn fx:id="prodCol" prefWidth="167.0" text="Product" />
           <TableColumn fx:id="priceCol" editable="false" minWidth="0.0" prefWidth="118.0" text="Price (€)" />
@@ -17,7 +21,7 @@
       <Button layoutX="568.0" layoutY="559.0" mnemonicParsing="false" onMouseClicked="#skipCycle" prefHeight="25.0" prefWidth="121.0" text="Skip cycle" />
       <Button layoutX="717.0" layoutY="559.0" mnemonicParsing="false" onMouseClicked="#resetCycle" prefHeight="25.0" prefWidth="121.0" text="Reset cycle" />
       <Button layoutX="857.0" layoutY="559.0" mnemonicParsing="false" onMouseClicked="#krachTheBrunch" prefHeight="25.0" prefWidth="177.0" text="Krach next cycle (!)" />
-      <TextArea fx:id="logTxtArea" editable="false" layoutX="290.0" layoutY="44.0" prefHeight="498.0" prefWidth="736.0">
+      <TextArea fx:id="logTxtArea" editable="false" layoutX="351.0" layoutY="50.0" prefHeight="492.0" prefWidth="675.0">
          <font>
             <Font name="Calibri" size="13.0" />
          </font></TextArea>
@@ -29,5 +33,77 @@
          </image>
       </ImageView>
       <Label fx:id="timeCountLabel" layoutX="417.0" layoutY="564.0" text="0:00" />
+      <Button layoutX="288.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#UpVienn" prefHeight="25.0" prefWidth="25.0" text="+" textAlignment="CENTER" textFill="#09f220">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="288.0" layoutY="151.0" mnemonicParsing="false" onMouseClicked="#UpGateaux" prefHeight="25.0" prefWidth="25.0" text="+" textAlignment="CENTER" textFill="#09f220">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="288.0" layoutY="176.0" mnemonicParsing="false" onMouseClicked="#UpCookie" prefHeight="25.0" prefWidth="25.0" text="+" textAlignment="CENTER" textFill="#09f220">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="288.0" layoutY="201.0" mnemonicParsing="false" onMouseClicked="#UpCrepe" prefHeight="25.0" prefWidth="25.0" text="+" textAlignment="CENTER" textFill="#09f220">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="288.0" layoutY="223.0" mnemonicParsing="false" onMouseClicked="#UpJus" prefHeight="25.0" prefWidth="25.0" text="+" textAlignment="CENTER" textFill="#09f220">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="288.0" layoutY="248.0" mnemonicParsing="false" onMouseClicked="#UpCafe" prefHeight="25.0" prefWidth="25.0" text="+" textAlignment="CENTER" textFill="#09f220">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="288.0" layoutY="275.0" mnemonicParsing="false" onMouseClicked="#UpChoco" prefHeight="25.0" prefWidth="25.0" text="+" textAlignment="CENTER" textFill="#09f220">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="288.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#UpClub" prefHeight="17.0" prefWidth="25.0" text="+" textAlignment="CENTER" textFill="#09f220">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="288.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#UpSalad" prefHeight="25.0" prefWidth="25.0" text="+" textAlignment="CENTER" textFill="#09f220">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="313.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#DownVienn" prefHeight="25.0" prefWidth="25.0" text="-" textAlignment="CENTER" textFill="#eb0101">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="313.0" layoutY="151.0" mnemonicParsing="false" onMouseClicked="#DownGateaux" prefHeight="25.0" prefWidth="25.0" text="-" textAlignment="CENTER" textFill="#eb0101">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="313.0" layoutY="201.0" mnemonicParsing="false" onMouseClicked="#DownCookie" prefHeight="25.0" prefWidth="25.0" text="-" textAlignment="CENTER" textFill="#eb0101">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="313.0" layoutY="176.0" mnemonicParsing="false" onMouseClicked="#DownCrepe" prefHeight="25.0" prefWidth="25.0" text="-" textAlignment="CENTER" textFill="#eb0101">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="313.0" layoutY="223.0" mnemonicParsing="false" onMouseClicked="#DownJus" prefHeight="25.0" prefWidth="25.0" text="-" textAlignment="CENTER" textFill="#eb0101">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="313.0" layoutY="248.0" mnemonicParsing="false" onMouseClicked="#DownCafe" prefHeight="25.0" prefWidth="25.0" text="-" textAlignment="CENTER" textFill="#eb0101">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="313.0" layoutY="275.0" mnemonicParsing="false" onMouseClicked="#DownChoco" prefHeight="25.0" prefWidth="25.0" text="-" textAlignment="CENTER" textFill="#eb0101">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="313.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#DownClub" prefHeight="25.0" prefWidth="25.0" text="-" textAlignment="CENTER" textFill="#eb0101">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="313.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#DownSalad" prefHeight="25.0" prefWidth="25.0" text="-" textAlignment="CENTER" textFill="#eb0101">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
    </children>
 </AnchorPane>

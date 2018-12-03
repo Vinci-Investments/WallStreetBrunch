@@ -57,14 +57,13 @@ public class Controller
                 Arrays.asList(
                         new Product("Viennoiseries", 0),
                         new Product("Gateaux", 0),
-                        new Product("Pancakes", 0),
-                        new Product("Donuts", 0),
                         new Product("Cookies", 0),
-                        new Product("Muffins", 0),
                         new Product("Crepes", 0),
-                        new Product("Jus de fruits", 0),
-                        new Product("Nespresso", 0),
-                        new Product("Chocolat chaud", 0)
+                        new Product("Jus", 0),
+                        new Product("Cafe", 0),
+                        new Product("Choco", 0),
+                        new Product("Club", 0),
+                        new Product("Salad", 0)
                 )
         ));
     }
@@ -88,6 +87,101 @@ public class Controller
 
     private void updateProductList()
     {
+    	System.out.println("\nCYCLE OVER, GENERATING NEW PRICES...");
+
+
+        if (VarJus==0)
+        {
+        	productList.get(4).randomizePrice();
+        }
+        else
+        {
+        	productList.get(4).priceProperty().set(productList.get(4).priceProperty().get()+(VarJus*0.1));
+        	System.out.println("\nJus Price forced to change by "+VarJus*0.1+" !");
+        }
+        if (VarChoco==0)
+        {
+        	productList.get(6).randomizePrice();
+        }
+        else
+        {
+        	productList.get(6).priceProperty().set(productList.get(6).priceProperty().get()+(VarChoco*0.1));
+        	System.out.println("\nChoco Price forced to change by "+VarChoco*0.1+" !");
+        }
+        if (VarCafe==0)
+        {
+        	productList.get(5).randomizePrice();
+        }
+        else
+        {
+        	productList.get(5).priceProperty().set(productList.get(5).priceProperty().get()+(VarCafe*0.1));
+        	System.out.println("\nCafe Price forced to change by "+VarCafe*0.1+" !");
+        }
+        if (VarCookies==0)
+        {
+        	productList.get(2).randomizePrice();
+        }
+        else
+        {
+        	productList.get(2).priceProperty().set(productList.get(2).priceProperty().get()+(VarCookies*0.1));
+        	System.out.println("\nCookies Price forced to change by "+VarCookies*0.1+" !");
+        }
+        if (VarVienn==0)
+        {
+        	productList.get(0).randomizePrice();
+        }
+        else
+        {
+        	productList.get(0).priceProperty().set(productList.get(0).priceProperty().get()+(VarVienn*0.1));
+        	System.out.println("\nViennoiseries Price forced to change by "+VarVienn*0.1+" !");
+        }
+        if (VarCrepes==0)
+        {
+        	productList.get(3).randomizePrice();
+        }
+        else
+        {
+        	productList.get(3).priceProperty().set(productList.get(3).priceProperty().get()+(VarCrepes*0.1));
+        	System.out.println("\nCrepes Price forced to change by "+VarCrepes*0.1+" !");
+        }
+        if (VarGateaux==0)
+        {
+        	productList.get(1).randomizePrice();
+        }
+        else
+        {
+        	productList.get(1).priceProperty().set(productList.get(1).priceProperty().get()+(VarGateaux*0.1));
+        	System.out.println("\nGateaux Price forced to change by "+VarGateaux*0.1+" !");
+        }
+        if (VarClub==0)
+        {
+        	productList.get(7).randomizePrice();
+        }
+        else
+        {
+        	productList.get(7).priceProperty().set(productList.get(7).priceProperty().get()+(VarClub*0.1));
+        	System.out.println("\nClub Price forced to change by "+VarClub*0.1+" !");
+        }
+        if (VarSalad==0)
+        {
+        	productList.get(8).randomizePrice();
+        }
+        else
+        {
+        	productList.get(8).priceProperty().set(productList.get(8).priceProperty().get()+(VarSalad*0.1));
+        	System.out.println("\nSalad Price forced to change by "+VarSalad*0.1+" !");
+        }
+
+        VarJus=0;
+    	VarCafe=0;
+    	VarChoco=0;
+ 	   	VarCookies=0;
+	    VarVienn=0;
+	    VarCrepes=0;
+	    VarSalad=0;
+	    VarClub=0;
+	    VarGateaux=0; 
+
         if(nextCycleIsAKrach)
         {
             System.out.println("\nTHIS CYCLE IS A KRACH, PRICES HAVE DROPPED");
@@ -97,35 +191,26 @@ public class Controller
                 switch (p.nameProperty().getValue())
                 {
                     case "Viennoiseries":
-                    case "Pancakes":
-                    case "Donuts":
                     case "Cookies":
-                    case "Muffins":
                     case "Crepes":
+                    case "Choco":  
+                    case "Jus":
+                    case "Gateaux":                                                          
                         p.priceProperty().set(0.2);
                         break;
-                    case "Gateaux":
-                    case "Jus de fruits":
-                    case "Nespresso":
-                    case "Chocolat chaud":
+                    case "Cafe":
                         p.priceProperty().set(0.3);
                         break;
+                    case "Club":
+                    case "Salad":
+                    	p.priceProperty().set(0.5);
+                    	break;
                     default:
                         System.out.println("[ERROR] Unexpected product encountered while generating. skipping...");
                 }
             }
         }
-
-        else
-        {
-            System.out.println("\nCYCLE OVER, GENERATING NEW PRICES...");
-
-            for (Product p : productList)
-                p.randomizePrice();
-
-            System.out.println("GENERATION SUCCESSFUL, SENDING PRICES TO ONLINE CLUSTER...");
-        }
-
+		
         nextCycleIsAKrach = false;
         MongoCollection<Document> collection = db.getCollection("products");
 
@@ -134,6 +219,11 @@ public class Controller
 
         System.out.println("UPLOAD SUCCESSFUL, CLUSTER IS UP-TO-DATE");
     }
+
+
+
+
+
 
     private void passASecond()
     {
@@ -169,4 +259,88 @@ public class Controller
         passASecond();
         tl.play();
     }
+    private int VarJus=0;
+    private int VarCafe=0;
+    private int VarChoco=0;
+    private int VarCookies=0;
+    private int VarMuffins=0;
+    private int VarVienn=0;
+    private int VarCrepes=0;
+    private int VarSalad=0;
+    private int VarClub=0;
+    private int VarGateaux=0;
+
+    @FXML private void DownGateaux()
+    {
+    	VarGateaux--;
+    }
+    @FXML private void UpGateaux()
+    {
+    	VarGateaux++;
+    }
+    @FXML private void DownJus()
+    {
+    	VarJus--;
+    }
+    @FXML private void DownCafe()
+    {
+    	VarCafe--;
+    }
+    @FXML private void DownChoco()
+    {
+    	VarChoco--;
+    }
+    @FXML private void DownCookie()
+    {
+    	VarCookies--;
+    }
+    @FXML private void DownVienn()
+    {
+    	VarVienn--;
+    }
+    @FXML private void DownCrepe()
+    {
+    	VarCrepes--;
+    }
+    @FXML private void DownSalad()
+    {
+    	VarSalad--;
+    }
+    @FXML private void DownClub()
+    {
+    	VarClub--;
+    }
+    @FXML private void UpJus()
+    {
+    	VarJus++;
+    }
+    @FXML private void UpCafe()
+    {
+    	VarCafe++;
+    }
+    @FXML private void UpChoco()
+    {
+    	VarChoco++;
+    }
+    @FXML private void UpCookie()
+    {
+    	VarCookies++;
+    }
+    @FXML private void UpVienn()
+    {
+    	VarVienn++;
+    }
+    @FXML private void UpCrepe()
+    {
+    	VarCrepes++;
+    }
+    @FXML private void UpSalad()
+    {
+    	VarSalad++;
+    }
+    @FXML private void UpClub()
+    {
+    	VarClub++;
+    }
+
 }
