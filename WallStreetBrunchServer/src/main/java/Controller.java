@@ -180,7 +180,7 @@ public class Controller
 	    VarCrepes=0;
 	    VarSalad=0;
 	    VarClub=0;
-	    VarGateaux=0; 
+	    VarGateaux=0;
 
         if(nextCycleIsAKrach)
         {
@@ -193,9 +193,9 @@ public class Controller
                     case "Viennoiseries":
                     case "Cookies":
                     case "Crepes":
-                    case "Choco":  
+                    case "Choco":
                     case "Jus":
-                    case "Gateaux":                                                          
+                    case "Gateaux":
                         p.priceProperty().set(0.2);
                         break;
                     case "Cafe":
@@ -210,7 +210,7 @@ public class Controller
                 }
             }
         }
-		
+
         nextCycleIsAKrach = false;
         MongoCollection<Document> collection = db.getCollection("products");
 

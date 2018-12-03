@@ -102,18 +102,18 @@ public class Controller
 		seriesSand.setName("Sandwich");
 		seriesSalad.setName("Salade");
 		seriesCookie.setName("Cookie");
+        
         productList.addAll(new ArrayList<>(
                 Arrays.asList(
-                        new Product("Viennoiseries", 1),
-                        new Product("Gateaux", 1),
-                        new Product("Pancakes", 1),
-                        new Product("Donuts", 1),
-                        new Product("Cookies", 1),
-                        new Product("Muffins", 1),
-                        new Product("Crepes", 1),
-                        new Product("Jus de fruits", 1),
-                        new Product("Nespresso", 1),
-                        new Product("Chocolat chaud", 1)
+                        new Product("Viennoiseries", 0),
+                        new Product("Gateaux", 0),
+                        new Product("Cookies", 0),
+                        new Product("Crepes", 0),
+                        new Product("Jus", 0),
+                        new Product("Cafe", 0),
+                        new Product("Choco", 0),
+                        new Product("Club", 0),
+                        new Product("Salad", 0)
                 )
         ));
       
